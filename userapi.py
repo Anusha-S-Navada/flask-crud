@@ -70,7 +70,7 @@ class UserAPI(Resource):
         email = args['email']
         password = args['password']
 
-        final_validation_result = validate_incoming_arguments(self, email, is_put_req=True)
+        final_validation_result = validate_incoming_arguments(self, email, is_put_req=False)
         if final_validation_result.get('error'):
             resp = jsonify(final_validation_result)
             resp.status_code = 400
